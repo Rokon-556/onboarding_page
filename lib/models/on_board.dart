@@ -5,12 +5,11 @@ class OnBoard {
   final VoidCallback btnFunc;
   final VoidCallback leftFunc;
   final VoidCallback rightFunc;
-   
   final bool isRight;
   final bool isLeft;
   final bool isBtn;
 
-  OnBoard(   {
+  OnBoard({
     required this.btnFunc,
     required this.isBtn,
     required this.leftFunc,
