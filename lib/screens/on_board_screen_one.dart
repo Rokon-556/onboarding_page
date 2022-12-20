@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../models/on_board.dart';
+import '../models/on_board_one.dart';
 import '../widgets/dot_indicator.dart';
-import '../widgets/on_board_content.dart';
+import '../widgets/on_board_content_one.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
+class OnBoardScreenOne extends StatefulWidget {
+  static const routeName = '/splash-screen-one';
+  const OnBoardScreenOne({
     super.key,
   });
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<OnBoardScreenOne> createState() => _OnBoardScreenOneState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _OnBoardScreenOneState extends State<OnBoardScreenOne> {
   late PageController _pageController;
   int _pageIndex = 0;
 
@@ -31,8 +32,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final List<OnBoard> demoData = [
-      OnBoard(
+    final List<OnBoardOne> demoData = [
+      OnBoardOne(
         isBtn: false,
         isRight: true,
         isLeft: false,
@@ -46,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
               duration: const Duration(milliseconds: 300), curve: Curves.ease);
         },
       ),
-      OnBoard(
+      OnBoardOne(
         leftFunc: () {
           _pageController.previousPage(
             duration: const Duration(milliseconds: 500),
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         description:
             'Here you will get all the products Like Electronics ,Grocery, Stationary',
       ),
-      OnBoard(
+      OnBoardOne(
         leftFunc: () {
           _pageController.previousPage(
             duration: const Duration(milliseconds: 500),
@@ -109,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   _pageIndex = index;
                 });
               },
-              itemBuilder: (context, index) => OnBoardContent(
+              itemBuilder: (context, index) => OnBoardContentOne(
                 image: demoData[index].image,
                 title: demoData[index].title,
                 description: demoData[index].description,

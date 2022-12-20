@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class OnBoard {
+class OnBoardOne {
   final String image, title, description;
   final VoidCallback btnFunc;
   final VoidCallback leftFunc;
@@ -9,7 +9,7 @@ class OnBoard {
   final bool isLeft;
   final bool isBtn;
 
-  OnBoard({
+  OnBoardOne({
     required this.btnFunc,
     required this.isBtn,
     required this.leftFunc,

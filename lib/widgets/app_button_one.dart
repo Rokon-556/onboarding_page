@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class AppButton extends StatelessWidget {
+class AppButtonOne extends StatelessWidget {
   final double? width;
   final String text;
   final VoidCallback func;
-  const AppButton(
+  const AppButtonOne(
       {super.key, this.width, required this.text, required this.func});
 
   @override

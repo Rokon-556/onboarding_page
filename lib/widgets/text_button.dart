@@ -14,7 +14,7 @@ class TextButtonClass extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: btnFunc,
-      child: Container(
+      child: SizedBox(
         height: 25,
         child: Center(
           child: Text(

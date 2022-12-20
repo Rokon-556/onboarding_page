@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:on_boarding_demo/widgets/app_button.dart';
+import 'package:on_boarding_demo/widgets/app_button_one.dart';
 import 'package:on_boarding_demo/widgets/text_button.dart';
 
-class OnBoardContent extends StatelessWidget {
+class OnBoardContentOne extends StatelessWidget {
   final String image;
   final String title;
   final String description;
@@ -14,7 +14,7 @@ class OnBoardContent extends StatelessWidget {
   final bool rightEnable;
   final bool isBtnEnable;
 
-  const OnBoardContent({
+  const OnBoardContentOne({
     Key? key,
     required this.image,
     required this.title,
@@ -87,7 +87,7 @@ class OnBoardContent extends StatelessWidget {
                 visible: isBtnEnable,
                 child: Align(
                   alignment: Alignment.bottomRight,
-                  child: AppButton(
+                  child: AppButtonOne(
                     text: 'Let\'s go',
                     func: btnFunc,
                     width: 100,
