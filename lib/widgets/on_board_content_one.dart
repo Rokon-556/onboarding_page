@@ -1,30 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:on_boarding_demo/widgets/app_button_one.dart';
-import 'package:on_boarding_demo/widgets/text_button.dart';
 
 class OnBoardContentOne extends StatelessWidget {
   final String image;
   final String title;
   final String description;
-  // final VoidCallback btnFunc;
-  // final VoidCallback leftFunc;
-  // final VoidCallback rightFunc;
-  // final bool leftEnable;
-  // final bool rightEnable;
-  // final bool isBtnEnable;
 
   const OnBoardContentOne({
     Key? key,
     required this.image,
     required this.title,
     required this.description,
-    // required this.leftEnable,
-    // required this.rightEnable,
-    // required this.isBtnEnable,
-    // required this.btnFunc,
-    // required this.leftFunc,
-    // required this.rightFunc,
   }) : super(key: key);
 
   @override
