@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:on_boarding_demo/widgets/app_button_one.dart';
+import 'package:on_boarding_demo/widgets/text_button.dart';
 
 import '../models/on_board_one.dart';
 import '../widgets/dot_indicator.dart';
@@ -30,55 +32,79 @@ class _OnBoardScreenOneState extends State<OnBoardScreenOne> {
     _pageController.dispose();
   }
 
+  _buildButtonRow(Widget left, Widget right, Widget btn) {
+    if (_pageIndex == 0) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(),
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: Align(alignment: Alignment.bottomRight, child: right),
+          ),
+        ],
+      );
+    } else if (_pageIndex == 1) {
+      return (Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Align(
+              alignment: Alignment.bottomLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: left,
+              )),
+          Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 12.0),
+                child: right,
+              ))
+        ],
+      ));
+    } else {
+      return (Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 12.0),
+            child: Align(alignment: Alignment.bottomLeft, child: left),
+          ),
+          Align(alignment: Alignment.bottomRight, child: btn)
+        ],
+      ));
+    }
+  }
+
+  _nextPage() {
+    _pageController.nextPage(
+        duration: const Duration(milliseconds: 300), curve: Curves.ease);
+  }
+
+  _previousPage() {
+    _pageController.previousPage(
+        duration: const Duration(milliseconds: 300), curve: Curves.ease);
+  }
+
+  _loginPage() {
+    //here go your code;
+  }
+
   @override
   Widget build(BuildContext context) {
     final List<OnBoardOne> demoData = [
       OnBoardOne(
-        isBtn: false,
-        isRight: true,
-        isLeft: false,
         image: 'assets/images/discount-3747.svg',
         title: 'All Problem One Solution',
         description: 'Need All groceries and Stationary Item? Here we go',
-        leftFunc: () {},
-        btnFunc: () {},
-        rightFunc: () {
-          _pageController.nextPage(
-              duration: const Duration(milliseconds: 300), curve: Curves.ease);
-        },
       ),
       OnBoardOne(
-        leftFunc: () {
-          _pageController.previousPage(
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.ease,
-          );
-        },
-        btnFunc: () {},
-        rightFunc: () {
-          _pageController.nextPage(
-              duration: const Duration(milliseconds: 300), curve: Curves.ease);
-        },
-        isBtn: false,
-        isRight: true,
-        isLeft: true,
         image: 'assets/images/cart.svg',
         title: 'Make Life Easier',
         description:
             'Here you will get all the products Like Electronics ,Grocery, Stationary',
       ),
       OnBoardOne(
-        leftFunc: () {
-          _pageController.previousPage(
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.ease,
-          );
-        },
-        btnFunc: () {},
-        rightFunc: () {},
-        isBtn: true,
-        isLeft: true,
-        isRight: false,
         image: 'assets/images/cash.svg',
         title: 'Unity Express',
         description:
@@ -114,13 +140,22 @@ class _OnBoardScreenOneState extends State<OnBoardScreenOne> {
                 image: demoData[index].image,
                 title: demoData[index].title,
                 description: demoData[index].description,
-                leftEnable: demoData[index].isLeft,
-                rightEnable: demoData[index].isRight,
-                isBtnEnable: demoData[index].isBtn,
-                btnFunc: demoData[index].btnFunc,
-                leftFunc: demoData[index].leftFunc,
-                rightFunc: demoData[index].rightFunc,
               ),
+            ),
+          ),
+          _buildButtonRow(
+            TextButtonClass(
+              btnText: 'Previous',
+              btnFunc: _previousPage,
+            ),
+            TextButtonClass(
+              btnText: 'Next',
+              btnFunc: _nextPage,
+            ),
+            AppButtonOne(
+              text: 'Get Start',
+              func: _loginPage,
+              width: 100,
             ),
           ),
           Padding(

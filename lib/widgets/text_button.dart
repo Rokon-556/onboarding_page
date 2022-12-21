@@ -21,7 +21,7 @@ class TextButtonClass extends StatelessWidget {
             btnText,
             style: TextStyle(
                 color: Theme.of(context).primaryColor,
-                fontSize: 14,
+                fontSize: 16,
                 fontWeight: FontWeight.bold),
           ),
         ),

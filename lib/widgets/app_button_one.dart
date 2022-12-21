@@ -13,7 +13,7 @@ class AppButtonOne extends StatelessWidget {
       onTap: func,
       child: Container(
         width: width,
-        height: 25,
+        height: 30,
         decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(12),

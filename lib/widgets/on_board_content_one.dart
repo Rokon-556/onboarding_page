@@ -7,24 +7,24 @@ class OnBoardContentOne extends StatelessWidget {
   final String image;
   final String title;
   final String description;
-  final VoidCallback btnFunc;
-  final VoidCallback leftFunc;
-  final VoidCallback rightFunc;
-  final bool leftEnable;
-  final bool rightEnable;
-  final bool isBtnEnable;
+  // final VoidCallback btnFunc;
+  // final VoidCallback leftFunc;
+  // final VoidCallback rightFunc;
+  // final bool leftEnable;
+  // final bool rightEnable;
+  // final bool isBtnEnable;
 
   const OnBoardContentOne({
     Key? key,
     required this.image,
     required this.title,
     required this.description,
-    required this.leftEnable,
-    required this.rightEnable,
-    required this.isBtnEnable,
-    required this.btnFunc,
-    required this.leftFunc,
-    required this.rightFunc,
+    // required this.leftEnable,
+    // required this.rightEnable,
+    // required this.isBtnEnable,
+    // required this.btnFunc,
+    // required this.leftFunc,
+    // required this.rightFunc,
   }) : super(key: key);
 
   @override
@@ -33,7 +33,7 @@ class OnBoardContentOne extends StatelessWidget {
       children: [
         SvgPicture.asset(
           image,
-          height: 300,
+          height: 200,
           width: double.infinity,
           fit: BoxFit.cover,
         ),
@@ -58,45 +58,6 @@ class OnBoardContentOne extends StatelessWidget {
         ),
         const Spacer(),
         const SizedBox(height: 12),
-        Padding(
-          padding: const EdgeInsets.only(
-            bottom: 8.0,
-          ),
-          child: Row(
-            children: [
-              Visibility(
-                  visible: leftEnable,
-                  child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 12.0),
-                        child: TextButtonClass(
-                            btnText: 'Previous', btnFunc: leftFunc),
-                      ))),
-              const Spacer(),
-              Visibility(
-                  visible: rightEnable,
-                  child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 12.0),
-                        child: TextButtonClass(
-                            btnText: 'Next', btnFunc: rightFunc),
-                      ))),
-              Visibility(
-                visible: isBtnEnable,
-                child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: AppButtonOne(
-                    text: 'Let\'s go',
-                    func: btnFunc,
-                    width: 100,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        )
       ],
     );
   }
