@@ -5,12 +5,10 @@ class CustomTheme with ChangeNotifier {
   ThemeData _theme = ThemeData(
     brightness: Brightness.light,
     appBarTheme: const AppBarTheme(backgroundColor: Colors.red),
-    // primarySwatch: Colors.deepPurple,
     textTheme: TextTheme(
       displayMedium: GoogleFonts.montserrat(color: Colors.black87),
       titleSmall: GoogleFonts.poppins(color: Colors.black54),
     ),
-    // primaryColor: Colors.red,
     scaffoldBackgroundColor: Colors.white,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent),
@@ -19,14 +17,12 @@ class CustomTheme with ChangeNotifier {
   ThemeData dark = ThemeData(
     brightness: Brightness.dark,
     appBarTheme: const AppBarTheme(backgroundColor: Colors.deepPurple),
-    // primaryColorLight: Colors.red,
     primaryColor: Colors.purple,
     scaffoldBackgroundColor: Colors.black,
     textTheme: ThemeData.dark().textTheme,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.purpleAccent,
-        elevation: 2,
       ),
     ),
   );

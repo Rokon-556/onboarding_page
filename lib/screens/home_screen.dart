@@ -3,7 +3,7 @@ import 'package:on_boarding_demo/screens/on_board_screen_one.dart';
 import 'package:on_boarding_demo/screens/on_board_screen_two.dart';
 import 'package:provider/provider.dart';
 
-import '../custom_theme.dart';
+import '../providers/custom_theme.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/';
@@ -37,19 +37,6 @@ class HomeScreen extends StatelessWidget {
                       .pushNamed(OnBoardingScreenTwo.routeName);
                 },
                 child: const Text('Onboard Two')),
-
-            // ElevatedButton.icon(
-            //     onPressed: () => currentTheme.toggleTheme(),
-            //     // onPressed: () {
-            //     //   currentTheme.addListener(() {
-            //     //     setState(() {});
-            //     //   });
-
-            //     //   // Provider.of<CustomTheme>(context, listen: false)
-            //     //   //     .toggleTheme();
-            //     // },
-            //     icon: const Icon(Icons.brightness_4),
-            //     label: const Text('Enable'))
           ]),
         ),
       ),
