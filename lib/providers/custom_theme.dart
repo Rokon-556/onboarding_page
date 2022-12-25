@@ -13,6 +13,9 @@ class CustomTheme with ChangeNotifier {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent),
     ),
+    // textButtonTheme: TextButtonThemeData(
+    //   style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent),
+    // ),
   );
   ThemeData dark = ThemeData(
     brightness: Brightness.dark,

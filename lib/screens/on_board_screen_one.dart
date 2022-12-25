@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:on_boarding_demo/widgets/app_button_one.dart';
 import 'package:on_boarding_demo/widgets/text_button.dart';
@@ -19,10 +21,24 @@ class OnBoardScreenOne extends StatefulWidget {
 class _OnBoardScreenOneState extends State<OnBoardScreenOne> {
   late PageController _pageController;
   int _pageIndex = 0;
+  Timer? _timer;
 
   @override
   void initState() {
     _pageController = PageController(initialPage: 0);
+    _timer = Timer.periodic(const Duration(seconds: 2), (Timer timer) {
+      if (_pageIndex < 2) {
+        _pageIndex++;
+      } else {
+        _pageIndex = 0;
+      }
+
+      _pageController.animateToPage(
+        _pageIndex,
+        duration: const Duration(milliseconds: 350),
+        curve: Curves.easeIn,
+      );
+    });
     super.initState();
   }
 
@@ -119,11 +135,10 @@ class _OnBoardScreenOneState extends State<OnBoardScreenOne> {
             alignment: Alignment.topRight,
             child: TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Skip',
                 style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.bold),
+                    color: Colors.redAccent, fontWeight: FontWeight.bold),
               ),
             ),
           ),

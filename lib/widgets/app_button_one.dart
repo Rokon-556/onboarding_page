@@ -14,12 +14,13 @@ class AppButtonOne extends StatelessWidget {
       child: Container(
         width: width,
         height: 30,
-        decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
+        decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12),
               bottomLeft: Radius.circular(12),
             ),
-            color: Theme.of(context).primaryColor),
+            color: Colors.red),
+        // color: Theme.of(context).primaryColor),
         child: Center(
           child: Text(
             text,

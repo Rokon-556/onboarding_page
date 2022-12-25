@@ -19,8 +19,8 @@ class TextButtonClass extends StatelessWidget {
         child: Center(
           child: Text(
             btnText,
-            style: TextStyle(
-                color: Theme.of(context).primaryColor,
+            style: const TextStyle(
+                color: Colors.redAccent,
                 fontSize: 16,
                 fontWeight: FontWeight.bold),
           ),

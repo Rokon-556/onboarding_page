@@ -12,9 +12,9 @@ class DotIndicator extends StatelessWidget {
       height: 5,
       width: isActive ? 12 : 4,
       decoration: BoxDecoration(
-        color: isActive
-            ? Theme.of(context).primaryColor
-            : Theme.of(context).primaryColor.withOpacity(0.4),
+        color: isActive ? Colors.red : Colors.red.withOpacity(0.4),
+        // ? Theme.of(context).primaryColor
+        // : Theme.of(context).primaryColor.withOpacity(0.4),
         borderRadius: const BorderRadius.all(
           Radius.circular(30),
         ),
